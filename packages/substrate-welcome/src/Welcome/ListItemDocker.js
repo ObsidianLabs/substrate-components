@@ -5,6 +5,7 @@ import {
 } from '@obsidians/ui-components'
 
 import fileOps from '@obsidians/file-ops'
+import notification from '@obsidians/notification'
 import { checkDocker, dockerVersion, startDocker } from './checkDependencies'
 
 export default class ListItemDocker extends PureComponent {
@@ -32,6 +33,9 @@ export default class ListItemDocker extends PureComponent {
       this.mounted && this.setState({ docker: 'STARTED', version })
     } else if (version) {
       this.mounted && this.setState({ docker: 'INSTALLED', version })
+      if (process.env.OS_IS_LINUX) {
+        notification.error('Fail to run docker', 'Make sure the non-root user has privileges to run docker')
+      }
     } else {
       this.mounted && this.setState({ docker: 'NONE', version: '' })
     }
@@ -75,7 +79,15 @@ export default class ListItemDocker extends PureComponent {
       case 'NONE':
         return <Button color='primary' onClick={this.installDocker}>Install</Button>
       case 'INSTALLED':
-        return <Button color='primary' onClick={this.startDocker}>Start Docker</Button>
+        if (process.env.OS_IS_LINUX) {
+          return (
+            <Button color='primary' onClick={() => fileOps.current.openLink('https://docs.docker.com/engine/install/linux-postinstall')}>
+              Need Privileges
+            </Button>
+          )
+        } else {
+          return <Button color='primary' onClick={this.startDocker}>Start Docker</Button>
+        }
       case 'STARTING':
         return (
           <Button color='primary' disabled>
@@ -86,9 +98,13 @@ export default class ListItemDocker extends PureComponent {
         return <Button color='secondary'>Started</Button>
     }
   }
-
+  
   installDocker = () => {
-    fileOps.current.openLink('https://www.docker.com/products/docker-desktop')
+    if (process.env.OS_IS_LINUX) {
+      fileOps.current.openLink('https://docs.docker.com/engine/install/ubuntu')
+    } else {
+      fileOps.current.openLink('https://www.docker.com/products/docker-desktop')
+    }
   }
 
   render () {
