@@ -8,7 +8,7 @@ const projectContextMenus = id => {
 
   return [
     {
-      text: `Show in Finder`,
+      text: `Open Containing Folder`,
       onClick: project => fileOps.current.openItem(project.path),
     },
     {
