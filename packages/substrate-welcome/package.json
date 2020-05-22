@@ -1,6 +1,6 @@
 {
   "name": "@obsidians/substrate-welcome",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Substrate IDE welcome screen",
   "author": "Phil <qft.gtr@gmail.com>",
   "license": "MIT",
@@ -19,6 +19,7 @@
   "dependencies": {
     "@obsidians/file-ops": "^0.1.0",
     "@obsidians/ipc": "^0.1.0",
+    "@obsidians/notification": "^0.1.0",
     "@obsidians/substrate-compiler": "^0.1.0",
     "@obsidians/substrate-instances": "^0.1.0",
     "@obsidians/ui-components": "^0.1.0",

@@ -19,7 +19,7 @@
   "dependencies": {
     "@obsidians/substrate-compiler": "^0.1.0",
     "@obsidians/substrate-keypair": "^0.1.0",
-    "@obsidians/substrate-project": "^0.1.0",
+    "@obsidians/substrate-project": "^0.1.1",
     "react-router-cache-route": "^1.8.4"
   },
   "devDependencies": {

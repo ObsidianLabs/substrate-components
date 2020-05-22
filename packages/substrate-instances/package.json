@@ -20,7 +20,7 @@
     "@obsidians/ipc": "^0.1.0",
     "@obsidians/notification": "^0.1.0",
     "@obsidians/substrate-node": "^0.1.0",
-    "@obsidians/substrate-project": "^0.1.0",
+    "@obsidians/substrate-project": "^0.1.1",
     "@obsidians/terminal": "^0.1.0",
     "@obsidians/ui-components": "^0.1.0",
     "moment": "^2.24.0",

@@ -1,6 +1,6 @@
 {
   "name": "@obsidians/substrate-project",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Substrate project",
   "author": "Phil <qft.gtr@gmail.com>",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@obsidians/substrate-compiler": "^0.1.0",
     "@obsidians/terminal": "^0.1.0",
     "@obsidians/ui-components": "^0.1.0",
-    "@obsidians/workspace": "^0.1.0",
+    "@obsidians/workspace": "^0.1.1",
     "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.15"
   },
