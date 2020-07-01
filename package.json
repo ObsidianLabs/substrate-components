@@ -2,6 +2,7 @@
   "name": "@obsidians/substrate-components",
   "private": true,
   "scripts": {
+    "build": "node init.js"
   },
   "dependencies": {
   },
