@@ -69,7 +69,7 @@ export default class NewProjectModal extends Component {
   createProject = async () => {
     const { name, version } = this.state
     const projectRoot = this.path.join(fileOps.current.homePath, 'Substrate IDE', name)
-    fileOps.current.ensureDirectory(projectRoot)
+    await fileOps.current.ensureDirectory(projectRoot)
 
     const createNode = this.createNodeCmd({ version })
     try {
