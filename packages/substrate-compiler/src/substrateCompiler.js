@@ -1,20 +1,16 @@
 import stripAnsi from 'strip-ansi'
 
 import fileOps from '@obsidians/file-ops'
-import { IpcChannel } from '@obsidians/ipc'
+import { DockerImageChannel } from '@obsidians/docker'
 import notification from '@obsidians/notification'
 
 class SubstrateCompiler {
   constructor () {
-    this.channel = new IpcChannel('substrate-compiler')
+    this.channel = new DockerImageChannel('obsidians/rust-w-wasm')
     this._terminal = null
     this._button = null
     this._frontendButton = null
     this.notification = null
-  }
-
-  async invoke (method, ...args) {
-    return await this.channel.invoke(method, ...args)
   }
 
   set terminal (v) {
