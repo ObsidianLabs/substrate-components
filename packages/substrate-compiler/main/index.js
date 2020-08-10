@@ -1,6 +1,3 @@
-const semverLt = require('semver/functions/lt')
-const semverValid = require('semver/functions/valid')
-
 const { IpcChannel } = require('@obsidians/ipc')
 const { DockerImageChannel } = require('@obsidians/docker')
 
