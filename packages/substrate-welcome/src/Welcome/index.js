@@ -6,7 +6,7 @@ import {
 
 import fileOps from '@obsidians/file-ops'
 
-import substrateCompiler, { RustWithWasmInstaller } from '@obsidians/substrate-compiler'
+import compiler from '@obsidians/substrate-compiler'
 
 import ListItemDocker from './ListItemDocker'
 import DockerImageItem from './DockerImageItem'
@@ -60,12 +60,12 @@ export default class Welcome extends PureComponent {
               />
               <DockerImageItem
                 ref={this.listItemRustWithWasm}
+                channel={compiler.channel}
                 title='Rust with WASM'
                 subtitle='Rust with WASM is used to compile a Substrate project and run Substrate nodes'
                 link='https://hub.docker.com/r/obsidians/rust-w-wasm'
-                getVersions={() => substrateCompiler.invoke('versions')}
-                Installer={RustWithWasmInstaller}
                 onInstalled={this.refresh}
+                downloadingTitle='Downloading Rust with WASM'
               />
             </ListGroup>
             <Button

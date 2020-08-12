@@ -4,8 +4,8 @@ import { ToolbarButton } from '@obsidians/ui-components'
 
 import CacheRoute from 'react-router-cache-route'
 
+import { DockerImageSelector } from '@obsidians/docker'
 import { PolkadotJsButton } from '@obsidians/substrate-keypair'
-import { RustWithWasmSelector } from '@obsidians/substrate-compiler'
 import { TerminalButton } from '@obsidians/substrate-project'
 
 import pjs from './pjs.svg'
@@ -29,7 +29,13 @@ export default function SubstrateBottomBar (props) {
             return null
           }
           return (
-            <RustWithWasmSelector
+            <DockerImageSelector
+              imageName='obsidians/rust-w-wasm'
+              icon='fas fa-hammer'
+              title='Rust with WASM'
+              noneName='No Rust with WASM installed'
+              modalTitle='Rust with WASM Versions'
+              downloadingTitle='Downloading Rust with WASM'
               selected={props.compilerVersion}
               onSelected={compilerVersion => props.onSelectCompiler(compilerVersion)}
             />
